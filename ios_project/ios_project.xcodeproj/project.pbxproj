@@ -14,6 +14,8 @@
 		1C29E01524BE447E00ACC0CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C29E01424BE447E00ACC0CD /* Assets.xcassets */; };
 		1C29E01824BE447E00ACC0CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C29E01624BE447E00ACC0CD /* LaunchScreen.storyboard */; };
 		1C29E01B24BE447E00ACC0CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E01A24BE447E00ACC0CD /* main.m */; };
+		1C29E02524BE4B1A00ACC0CD /* AllNotesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */; };
+		1C29E02824BE5B8400ACC0CD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		1C29E01724BE447E00ACC0CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C29E01924BE447E00ACC0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C29E01A24BE447E00ACC0CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C29E02324BE4B1A00ACC0CD /* AllNotesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllNotesTableViewCell.h; sourceTree = "<group>"; };
+		1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllNotesTableViewCell.m; sourceTree = "<group>"; };
+		1C29E02624BE5B8400ACC0CD /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,10 @@
 				1C29E01924BE447E00ACC0CD /* Info.plist */,
 				1C29E01A24BE447E00ACC0CD /* main.m */,
 				1C29E01124BE447B00ACC0CD /* ios_project.xcdatamodeld */,
+				1C29E02324BE4B1A00ACC0CD /* AllNotesTableViewCell.h */,
+				1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */,
+				1C29E02624BE5B8400ACC0CD /* DetailsViewController.h */,
+				1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */,
 			);
 			path = ios_project;
 			sourceTree = "<group>";
@@ -145,7 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C29E00D24BE447B00ACC0CD /* ViewController.m in Sources */,
+				1C29E02524BE4B1A00ACC0CD /* AllNotesTableViewCell.m in Sources */,
 				1C29E00A24BE447B00ACC0CD /* AppDelegate.m in Sources */,
+				1C29E02824BE5B8400ACC0CD /* DetailsViewController.m in Sources */,
 				1C29E01B24BE447E00ACC0CD /* main.m in Sources */,
 				1C29E01324BE447B00ACC0CD /* ios_project.xcdatamodeld in Sources */,
 			);
