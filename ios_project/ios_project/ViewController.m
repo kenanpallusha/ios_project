@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 
@@ -47,19 +48,24 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //UIStoryboard *storyboard = UIStoryboard(
     
     //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //DetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"detailsViewController"];
-    NSString *rowselected = [NSString stringWithFormat:@"%li",(long)indexPath.row];
-
+//NSString *rowselected = [NSString stringWithFormat:@"%li",(long)indexPath.row];
 
 // NSString* combinedString = [@"HELLO DU BIST AFFENN with row: "  stringByAppendingString: rowselected];
     
-    printf(indexPath.row);
 //    vc.note_details = @"HELLOOOO";
 //    [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (IBAction)addNewNote:(UIBarButtonItem *)sender {
+    NSLog(@"Add new note selected");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"detailsViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 @end

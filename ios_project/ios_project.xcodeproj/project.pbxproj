@@ -16,6 +16,8 @@
 		1C29E01B24BE447E00ACC0CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E01A24BE447E00ACC0CD /* main.m */; };
 		1C29E02524BE4B1A00ACC0CD /* AllNotesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */; };
 		1C29E02824BE5B8400ACC0CD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */; };
+		1C29E02B24BFA78700ACC0CD /* CategoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02A24BFA78700ACC0CD /* CategoriesTableViewCell.m */; };
+		1C29E03224BFA9F800ACC0CD /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E03124BFA9F800ACC0CD /* CategoriesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllNotesTableViewCell.m; sourceTree = "<group>"; };
 		1C29E02624BE5B8400ACC0CD /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		1C29E02924BFA78700ACC0CD /* CategoriesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesTableViewCell.h; sourceTree = "<group>"; };
+		1C29E02A24BFA78700ACC0CD /* CategoriesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewCell.m; sourceTree = "<group>"; };
+		1C29E03024BFA9F800ACC0CD /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		1C29E03124BFA9F800ACC0CD /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +82,24 @@
 				1C29E01924BE447E00ACC0CD /* Info.plist */,
 				1C29E01A24BE447E00ACC0CD /* main.m */,
 				1C29E01124BE447B00ACC0CD /* ios_project.xcdatamodeld */,
-				1C29E02324BE4B1A00ACC0CD /* AllNotesTableViewCell.h */,
-				1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */,
 				1C29E02624BE5B8400ACC0CD /* DetailsViewController.h */,
 				1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */,
+				1C29E03024BFA9F800ACC0CD /* CategoriesViewController.h */,
+				1C29E03124BFA9F800ACC0CD /* CategoriesViewController.m */,
+				1C29E02F24BFA9C000ACC0CD /* TableViewCells */,
 			);
 			path = ios_project;
+			sourceTree = "<group>";
+		};
+		1C29E02F24BFA9C000ACC0CD /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1C29E02324BE4B1A00ACC0CD /* AllNotesTableViewCell.h */,
+				1C29E02424BE4B1A00ACC0CD /* AllNotesTableViewCell.m */,
+				1C29E02924BFA78700ACC0CD /* CategoriesTableViewCell.h */,
+				1C29E02A24BFA78700ACC0CD /* CategoriesTableViewCell.m */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +174,8 @@
 			files = (
 				1C29E00D24BE447B00ACC0CD /* ViewController.m in Sources */,
 				1C29E02524BE4B1A00ACC0CD /* AllNotesTableViewCell.m in Sources */,
+				1C29E03224BFA9F800ACC0CD /* CategoriesViewController.m in Sources */,
+				1C29E02B24BFA78700ACC0CD /* CategoriesTableViewCell.m in Sources */,
 				1C29E00A24BE447B00ACC0CD /* AppDelegate.m in Sources */,
 				1C29E02824BE5B8400ACC0CD /* DetailsViewController.m in Sources */,
 				1C29E01B24BE447E00ACC0CD /* main.m in Sources */,

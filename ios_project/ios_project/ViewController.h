@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AllNotesTableViewCell.h"
 #import "DetailsViewController.h"
+#import "CategoriesViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
