@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
+
+@property (nonatomic, assign) NSString* note_details;
+
+@property (weak, nonatomic) IBOutlet UILabel *category;
+
+
+@property (weak, nonatomic) IBOutlet UITextView *text;
 
 @end
 

@@ -47,11 +47,18 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //UIStoryboard *storyboard = UIStoryboard(
     
-//    DetailsViewController *details = [[DetailsViewController alloc] init];
-//    [self.navigationController pushViewController:details animated:YES];
-    printf("maca");
+    //UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //DetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"detailsViewController"];
+    NSString *rowselected = [NSString stringWithFormat:@"%li",(long)indexPath.row];
 
+
+// NSString* combinedString = [@"HELLO DU BIST AFFENN with row: "  stringByAppendingString: rowselected];
+    
+    printf(indexPath.row);
+//    vc.note_details = @"HELLOOOO";
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
