@@ -10,9 +10,15 @@
 #import "AllNotesTableViewCell.h"
 #import "DetailsViewController.h"
 #import "CategoriesViewController.h"
+#import "AppDelegate.h"
+@import CoreData;
+@class AppDelegate;
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+@property (nonatomic) NSArray <Notes*>*notes;
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic, weak) AppDelegate *delegate;
+@property (weak, nonatomic) IBOutlet UITableView *notesTableView;
 
 @end
 

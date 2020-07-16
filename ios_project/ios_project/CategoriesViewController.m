@@ -19,8 +19,15 @@
     // Do any additional setup after loading the view.
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return self.categories.count;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -28,7 +35,9 @@
     
     CategoriesTableViewCell *cell = (CategoriesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     
-    cell.category.text = @"Food";
+    NSString *category = self.categories[indexPath.row];
+    
+    cell.category.text = category;
     
     return cell;
     
@@ -48,5 +57,14 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
+- (IBAction)allNotesBtnTouched:(UIButton *)sender {
+    NSLog(@"All Notes touched");
+}
+
+- (IBAction)recycleBinBtnTouched:(UIButton *)sender {
+    NSLog(@"Recycle bin touched");
+}
+
 
 @end
