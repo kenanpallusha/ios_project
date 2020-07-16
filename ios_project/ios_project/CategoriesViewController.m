@@ -46,6 +46,13 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *category = self.categories[indexPath.row];
+    UINavigationController *nvgcont = self.presentingViewController;
+    ViewController *vc = nvgcont.topViewController;
+    vc.to_show = category;
+    [vc viewWillAppear:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -54,16 +61,31 @@
     CGPoint touchpoint = [touch locationInView:self.view];
     
     if (!CGRectContainsPoint(_menuView.frame, touchpoint)) {
+        //
+        UINavigationController *nvgcont = self.presentingViewController;
+        ViewController *vc = nvgcont.topViewController;
+        vc.to_show = @"ALL";
+        [vc viewWillAppear:NO];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
 - (IBAction)allNotesBtnTouched:(UIButton *)sender {
     NSLog(@"All Notes touched");
+    UINavigationController *nvgcont = self.presentingViewController;
+    ViewController *vc = nvgcont.topViewController;
+    vc.to_show = @"ALL";
+    [vc viewWillAppear:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)recycleBinBtnTouched:(UIButton *)sender {
     NSLog(@"Recycle bin touched");
+    UINavigationController *nvgcont = self.presentingViewController;
+    ViewController *vc = nvgcont.topViewController;
+    vc.to_show = @"BIN";
+    [vc viewWillAppear:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

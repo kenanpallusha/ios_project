@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CategoriesTableViewCell.h"
+#import "ViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

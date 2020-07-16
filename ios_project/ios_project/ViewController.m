@@ -19,18 +19,47 @@
     // Do any additional setup after loading the view.
     self.delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.context = self.delegate.persistentContainer.viewContext;
+    self.to_show = @"ALL";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self fetchAllNotes];
+    [self selectDataToShow];
     [self.notesTableView reloadData];
     
 }
 
-- (void) fetchAllNotes{
+- (void) selectDataToShow{
+    if ([self.to_show  isEqual: @"ALL"]){
+        [self fetchAllNotes:@"deleted = NO"];
+        self.navigationController.topViewController.title = @"All Notes";
+    } else if([self.to_show  isEqual: @"BIN"]){
+        [self fetchAllNotes:@"deleted = YES"];
+        self.navigationController.topViewController.title =  @"Deleted Notes";
+    } else {
+        self.navigationController.topViewController.title = self.to_show;
+        [self fetchCategories:self.to_show];
+    }
+}
+
+- (void) fetchAllNotes:(NSString*)show_trash{
+   
+    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Notes"];
     NSSortDescriptor *modifiedDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated" ascending:NO];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:show_trash];
+    request.predicate = predicate;
+    request.sortDescriptors = @[modifiedDescriptor];
+    self.notes = [self.context executeFetchRequest:request error:nil];
+}
+
+- (void) fetchCategories:(NSString*)category{
+    
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Notes"];
+    NSSortDescriptor *modifiedDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"updated" ascending:NO];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deleted = NO and category like %@", category];
+    request.predicate = predicate;
     request.sortDescriptors = @[modifiedDescriptor];
     self.notes = [self.context executeFetchRequest:request error:nil];
 }
@@ -75,8 +104,40 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"detailsViewController"];
     vc.is_update = YES;
+    if([self.to_show  isEqual: @"BIN"]){
+        vc.is_deleted = YES;
+    } else {
+        vc.is_deleted = NO;
+    }
     vc.note_details = note;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Notes *note = self.notes[indexPath.row];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Notes"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"noteID like %@", note.noteID];
+        request.predicate = predicate;
+        NSArray <Notes*> *Note = [self.context executeFetchRequest:request error:nil];
+        Notes *wantedNote = Note[0];
+        
+        if ([self.to_show  isEqual: @"BIN"]){
+           [self.context deleteObject:wantedNote];
+        } else {
+            wantedNote.deleted = YES;
+        }
+        
+        
+        [self.delegate saveContext];
+        [self selectDataToShow];
+        [self.notesTableView reloadData];
+
+    }
 }
 
 - (IBAction)addNewNote:(UIBarButtonItem *)sender {
@@ -84,6 +145,7 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailsViewController *vc = [sb instantiateViewControllerWithIdentifier:@"detailsViewController"];
     vc.is_update = NO;
+    vc.is_deleted = NO;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -92,6 +154,8 @@
     {
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Notes"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"deleted = NO"];
+        request.predicate = predicate;
         self.notes = [self.context executeFetchRequest:request error:nil];
         
         NSMutableArray *catArr = [NSMutableArray array];
