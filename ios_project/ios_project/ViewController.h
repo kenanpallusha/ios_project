@@ -19,6 +19,7 @@
 @property (nonatomic) NSManagedObjectContext *context;
 @property (nonatomic, weak) AppDelegate *delegate;
 @property (weak, nonatomic) IBOutlet UITableView *notesTableView;
+@property (weak, nonatomic) IBOutlet UILabel *noNotesLbl;
 @property (nonatomic) NSString* to_show;
 @end
 

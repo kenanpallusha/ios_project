@@ -69,6 +69,11 @@
 
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if(self.notes.count > 0){
+        self.noNotesLbl.alpha = 0.0;
+    } else {
+        self.noNotesLbl.alpha = 1.0;
+    }
     return self.notes.count;
 }
 

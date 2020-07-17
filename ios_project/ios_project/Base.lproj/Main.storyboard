@@ -217,13 +217,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="dc0-Pb-Xzy"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notes!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17h-sz-8gB">
+                                <rect key="frame" x="153.5" y="128" width="107" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K1q-44-CzT" secondAttribute="bottom" id="4rx-kl-PQU"/>
                             <constraint firstItem="K1q-44-CzT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7XH-5f-33U"/>
+                            <constraint firstItem="17h-sz-8gB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="JU5-NK-Q4Q"/>
                             <constraint firstItem="K1q-44-CzT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tl5-3x-Xp9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K1q-44-CzT" secondAttribute="trailing" id="iyB-yi-MdF"/>
+                            <constraint firstItem="17h-sz-8gB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sRF-mo-WA6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -241,6 +249,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noNotesLbl" destination="17h-sz-8gB" id="Ck3-v3-Vmw"/>
                         <outlet property="notesTableView" destination="K1q-44-CzT" id="OfJ-mi-UtB"/>
                     </connections>
                 </viewController>
