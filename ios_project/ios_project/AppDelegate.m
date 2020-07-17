@@ -20,6 +20,24 @@
     // Override point for customization after application launch.
     
     self.context = self.persistentContainer.viewContext;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:@"user"];
+    UserProfileModel *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    if (object.name != nil){
+        NSLog(@"User is already created");
+        
+        ViewController *Vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"viewController"];
+        [(UINavigationController *)self.window.rootViewController pushViewController:Vc animated:YES];
+        
+    } else {
+        NSLog(@"Create User");
+    }
+    
+    //ENABLE USER EDITING
+    
+    
     return YES;
 }
 

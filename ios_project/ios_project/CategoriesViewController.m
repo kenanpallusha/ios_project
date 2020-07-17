@@ -22,6 +22,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    UserProfileModel* user = [self loadCustomObjectWithKey:@"user"];
+    self.noteLbl.text = [NSString stringWithFormat:@"%@'s Notes", user.name];
+    UIImage *image = [UIImage imageWithData:user.image];
+    self.image.image = image;
 
 }
 
@@ -88,5 +92,21 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)editBtnTouched:(UIButton *)sender {
+    
+    CreateAccountViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"createAccount"];
+    vc.is_update = YES;
+    
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController: vc];
+    [self presentModalViewController:nav animated:YES];
+}
+
+
+- (UserProfileModel *)loadCustomObjectWithKey:(NSString *)key {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    UserProfileModel *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return object;
+}
 
 @end

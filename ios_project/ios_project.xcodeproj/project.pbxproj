@@ -19,6 +19,8 @@
 		1C29E02B24BFA78700ACC0CD /* CategoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E02A24BFA78700ACC0CD /* CategoriesTableViewCell.m */; };
 		1C29E03224BFA9F800ACC0CD /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E03124BFA9F800ACC0CD /* CategoriesViewController.m */; };
 		1C29E03924C0A31A00ACC0CD /* SelectExistingCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E03824C0A31A00ACC0CD /* SelectExistingCategoryViewController.m */; };
+		1C29E03C24C196C400ACC0CD /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E03B24C196C300ACC0CD /* CreateAccountViewController.m */; };
+		1C29E03F24C1AA4200ACC0CD /* UserProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29E03E24C1AA4200ACC0CD /* UserProfileModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,10 @@
 		1C29E03124BFA9F800ACC0CD /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CategoriesViewController.m; path = ../CategoriesViewController.m; sourceTree = "<group>"; };
 		1C29E03724C0A31A00ACC0CD /* SelectExistingCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectExistingCategoryViewController.h; sourceTree = "<group>"; };
 		1C29E03824C0A31A00ACC0CD /* SelectExistingCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectExistingCategoryViewController.m; sourceTree = "<group>"; };
+		1C29E03A24C196C300ACC0CD /* CreateAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		1C29E03B24C196C300ACC0CD /* CreateAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
+		1C29E03D24C1AA4200ACC0CD /* UserProfileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserProfileModel.h; path = ../UserProfileModel.h; sourceTree = "<group>"; };
+		1C29E03E24C1AA4200ACC0CD /* UserProfileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UserProfileModel.m; path = ../UserProfileModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +93,11 @@
 				1C29E01124BE447B00ACC0CD /* ios_project.xcdatamodeld */,
 				1C29E02624BE5B8400ACC0CD /* DetailsViewController.h */,
 				1C29E02724BE5B8400ACC0CD /* DetailsViewController.m */,
+				1C29E03A24C196C300ACC0CD /* CreateAccountViewController.h */,
+				1C29E03B24C196C300ACC0CD /* CreateAccountViewController.m */,
 				1C29E03624C09F7400ACC0CD /* ModalViewControllers */,
 				1C29E02F24BFA9C000ACC0CD /* TableViewCells */,
+				1C29E04024C20F1700ACC0CD /* Models */,
 			);
 			path = ios_project;
 			sourceTree = "<group>";
@@ -113,6 +122,15 @@
 				1C29E03824C0A31A00ACC0CD /* SelectExistingCategoryViewController.m */,
 			);
 			path = ModalViewControllers;
+			sourceTree = "<group>";
+		};
+		1C29E04024C20F1700ACC0CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C29E03D24C1AA4200ACC0CD /* UserProfileModel.h */,
+				1C29E03E24C1AA4200ACC0CD /* UserProfileModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,11 +205,13 @@
 			files = (
 				1C29E00D24BE447B00ACC0CD /* ViewController.m in Sources */,
 				1C29E03924C0A31A00ACC0CD /* SelectExistingCategoryViewController.m in Sources */,
+				1C29E03C24C196C400ACC0CD /* CreateAccountViewController.m in Sources */,
 				1C29E02524BE4B1A00ACC0CD /* AllNotesTableViewCell.m in Sources */,
 				1C29E03224BFA9F800ACC0CD /* CategoriesViewController.m in Sources */,
 				1C29E02B24BFA78700ACC0CD /* CategoriesTableViewCell.m in Sources */,
 				1C29E00A24BE447B00ACC0CD /* AppDelegate.m in Sources */,
 				1C29E02824BE5B8400ACC0CD /* DetailsViewController.m in Sources */,
+				1C29E03F24C1AA4200ACC0CD /* UserProfileModel.m in Sources */,
 				1C29E01B24BE447E00ACC0CD /* main.m in Sources */,
 				1C29E01324BE447B00ACC0CD /* ios_project.xcdatamodeld in Sources */,
 			);
